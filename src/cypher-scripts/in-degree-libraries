@@ -1,0 +1,4 @@
+MATCH (a:Artifact)
+WITH size(()-[:dependency]->(a)) AS degree
+RETURN degree, count(*) AS frequency
+ORDER BY degree ASC

@@ -1,0 +1,4 @@
+MATCH (r:Release)
+WITH size((r)-[:dependency]->()) AS degree
+RETURN degree, count(*) AS frequency
+ORDER BY degree ASC
