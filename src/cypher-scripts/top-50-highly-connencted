@@ -1,0 +1,5 @@
+// Find the top 50 most depended-upon Artifacts
+MATCH (r:Release)-[:dependency]->(a:Artifact)
+RETURN a.id AS artifactId, COUNT(*) AS numIncoming
+ORDER BY numIncoming DESC
+LIMIT 50;

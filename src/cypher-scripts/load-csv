@@ -1,0 +1,5 @@
+// load top n artifacts to query there nieghbors and dependencies
+LOAD CSV WITH HEADERS FROM 'file:///top_5000_artifacts.csv' AS row
+MERGE (a:Artifact {id: row.artifactId})
+SET a.numIncoming = toInteger(row.numIncoming)
+;

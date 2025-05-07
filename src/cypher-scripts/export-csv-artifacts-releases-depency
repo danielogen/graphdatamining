@@ -1,0 +1,21 @@
+// Sample artifacts in the list []
+CALL apoc.export.csv.query(
+               "
+                MATCH (a:Artifact)-[:relationship_AR]->(r:Release)
+                WHERE a.id IN ['junit:junit', 'org.slf4j:slf4j-api', 'org.mockito:mockito-core', 'org.scala-lang:scala-library', 'org.assertj:assertj-core', 'ch.qos.logback:logback-classic', 'com.google.guava:guava', 'com.fasterxml.jackson.core:jackson-databind', 'org.hamcrest:hamcrest-all', 'org.projectlombok:lombok', 'org.apache.commons:commons-lang3', 'commons-io:commons-io', 'org.jetbrains.kotlin:kotlin-stdlib', 'org.apache.logging.log4j:log4j-core', 'org.junit.jupiter:junit-jupiter-api', 'org.jetbrains.kotlin:kotlin-stdlib-common', 'org.testng:testng', 'org.apache.logging.log4j:log4j-slf4j-impl', 'org.slf4j:slf4j-log4j12', 'com.amazonaws:aws-java-sdk-core', 'org.slf4j:jcl-over-slf4j', 'org.jetbrains.kotlin:kotlin-stdlib-jdk8', 'org.apache.felix:org.apache.felix.scr.ds-annotations', 'javax.annotation:javax.annotation-api', 'com.google.code.findbugs:jsr305', 'com.google.code.gson:gson', 'javax.servlet:javax.servlet-api', 'log4j:log4j', 'org.junit.jupiter:junit-jupiter-engine', 'com.amazonaws:jmespath-java', 'com.amazonaws:aws-java-sdk-test-utils', 'org.apache.logging.log4j:log4j-api', 'software.amazon.awssdk:utils', 'software.amazon.awssdk:annotations', 'io.reactivex.rxjava2:rxjava', 'software.amazon.awssdk:http-client-spi', 'software.amazon.awssdk:sdk-core', 'org.slf4j:slf4j-simple', 'com.fasterxml.jackson.core:jackson-annotations', 'software.amazon.awssdk:test-utils', 'software.amazon.awssdk:aws-core', 'software.amazon.awssdk:regions', 'software.amazon.awssdk:auth', 'software.amazon.awssdk:apache-client', 'software.amazon.awssdk:netty-nio-client', 'software.amazon.awssdk:protocol-core', 'software.amazon.awssdk:service-test-utils', 'com.fasterxml.jackson.core:jackson-core', 'software.amazon.awssdk:aws-json-protocol', 'org.springframework:spring-context']
+                OPTIONAL MATCH (r)-[d:dependency]->(dep_a:Artifact)
+                RETURN
+                  a.id AS ArtifactID,
+                  a.numIncoming AS NumIncoming,
+                  r.id AS ReleaseID,
+                  r.version AS ReleaseVersion,
+                  r.timestamp AS ReleaseTimestamp,
+                  dep_a.id AS DependentArtifactID,
+                  d.targetVersion AS DependencyTargetVersion,
+                  d.scope AS DependencyScope
+               ",
+               'selected_artifact_release_dependencies.csv',
+               {}
+             )
+             YIELD file, nodes, relationships, properties, time
+             RETURN file, nodes, relationships, properties, time;
