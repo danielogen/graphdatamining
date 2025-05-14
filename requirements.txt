@@ -1,2 +1,6 @@
 mathplotlib
 pandas
+pickle
+numpy
+powerlaw
+networkx
