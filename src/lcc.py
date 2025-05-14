@@ -22,16 +22,16 @@ largest_component_size = max(component_sizes)
 total_nodes = G.number_of_nodes()
 
 # --- Report stats ---
-print(f"✅ Total connected components: {num_components}")
-print(f"✅ Largest connected component (LCC) size: {largest_component_size} nodes")
-print(f"✅ Total nodes in graph: {total_nodes}")
+print(f"Total connected components: {num_components}")
+print(f"Largest connected component (LCC) size: {largest_component_size} nodes")
+print(f"Total nodes in graph: {total_nodes}")
 
 lcc_percentage = (largest_component_size / total_nodes) * 100
-print(f"✅ LCC covers {lcc_percentage:.2f}% of all nodes")
+print(f"LCC covers {lcc_percentage:.2f}% of all nodes")
 
 small_components = [size for size in component_sizes if size < largest_component_size]
 small_component_percentage = (sum(small_components) / total_nodes) * 100
-print(f"✅ Small components cover {small_component_percentage:.2f}% of all nodes")
+print(f"Small components cover {small_component_percentage:.2f}% of all nodes")
 
 # --- Plot component size distribution ---
 plt.figure(figsize=(10, 6))

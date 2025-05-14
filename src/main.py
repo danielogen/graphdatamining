@@ -18,31 +18,31 @@ for node in G.nodes:
 
 # Step 2: Report and remove them
 if bad_nodes:
-    print(f"⚠️ Found {len(bad_nodes)} invalid nodes (e.g., None or NaN). Removing...")
+    print(f"Found {len(bad_nodes)} invalid nodes (e.g., None or NaN). Removing...")
     G.remove_nodes_from(bad_nodes)
 
 # Step 3: Now safely print stats
-print(f"✅ Graph Loaded Successfully")
+print(f"Graph Loaded Successfully")
 print(f"Number of nodes: {G.number_of_nodes()}")
 print(f"Number of edges: {G.number_of_edges()}")
 
 
 
 # Degree distributions
-# deg, in_deg, out_deg = compute_degree_distributions(G)
-# print("Average degree:", sum(deg.values()) / len(deg))
+deg, in_deg, out_deg = compute_degree_distributions(G)
+print("Average degree:", sum(deg.values()) / len(deg))
 
 # PageRank
-# pr = compute_pagerank(G)
-# print("Top 10 PageRank nodes:", sorted(pr.items(), key=lambda x: x[1], reverse=True)[:10])
+pr = compute_pagerank(G)
+print("Top 10 PageRank nodes:", sorted(pr.items(), key=lambda x: x[1], reverse=True)[:10])
 
 # Betweenness
 bc = compute_betweenness_centrality(G, k=20)
 print("Top 10 Betweenness nodes:", sorted(bc.items(), key=lambda x: x[1], reverse=True)[:10])
 
 # Clustering - This will take alot of time.
-# local_clust, avg_clust = compute_clustering_coefficients(G)
-# print("Average clustering coefficient:", avg_clust)
+local_clust, avg_clust = compute_clustering_coefficients(G)
+print("Average clustering coefficient:", avg_clust)
 
 
 # Strongly connected components
@@ -56,9 +56,9 @@ lcc_subgraph = compute_largest_connected_component(G)
 print("LCC size:", lcc_subgraph.number_of_nodes())
 
 # # Average shortest path length (if connected)
-# avg_path = compute_average_shortest_path_length(lcc_subgraph)
-# if avg_path:
-#     print("Average shortest path length in LCC:", avg_path)
+avg_path = compute_average_shortest_path_length(lcc_subgraph)
+if avg_path:
+    print("Average shortest path length in LCC:", avg_path)
 
 
 # Plot degree distributions

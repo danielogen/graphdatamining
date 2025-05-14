@@ -38,7 +38,7 @@ def compute_strongly_connected_components(G):
         scc_sizes = [len(comp) for comp in scc]
         return scc, scc_sizes
     else:
-        print("⚠️ SCC only applies to directed graphs.")
+        print("SCC only applies to directed graphs.")
         return None, None
 
 # --- Largest Connected Component (LCC) ---
@@ -54,5 +54,5 @@ def compute_average_shortest_path_length(G):
         avg_length = nx.average_shortest_path_length(G)
         return avg_length
     else:
-        print("⚠️ Graph is disconnected; cannot compute average shortest path length.")
+        print("Graph is disconnected; cannot compute average shortest path length.")
         return None
