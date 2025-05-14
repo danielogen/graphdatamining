@@ -15,7 +15,7 @@ A Python-based project for **mining, analyzing, and visualizing large-scale arti
 
 --- -->
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 graphdatamining-main/
@@ -58,7 +58,7 @@ graphdatamining-main/
 
 ---
 
-## 🚀 Usage Instructions
+## Usage Instructions
 
 ### Prerequisites
 
@@ -94,7 +94,7 @@ jupyter notebook src/demo.ipynb
 
 ---
 
-## 📊 Features
+## Features
 
 * **Graph Construction**: Build artifact-release dependency graph from CSV data.
 * **Metrics Analysis**:
@@ -117,7 +117,7 @@ jupyter notebook src/demo.ipynb
 
 ---
 
-## 📂 Key Files Explained
+## Key Files Explained
 
 | File/Folder       | Purpose                                     |
 | ----------------- | ------------------------------------------- |
@@ -131,14 +131,14 @@ jupyter notebook src/demo.ipynb
 | `demo.ipynb`      | Interactive demonstration notebook          |
 
 ---
-
+<!-- 
 ## 💡 Contribution Guidelines
 
 1. Fork the repository.
 2. Create a feature branch.
 3. Submit a pull request with a detailed description.
 
----
+--- -->
 
 ## 🛡 License
 
