@@ -1,6 +1,4 @@
-## Project Topic: 
-
-**Understanding Software Ecosystem Dependencies: Structural and Connectivity Analysis of Maven Central**
+## Understanding Software Ecosystem Dependencies: Structural and Connectivity Analysis of Maven Central
 ## Abstract (Short)
 Understanding the structural characteristics and connectivity patterns of large-scale software ecosystems is critical for enhancing software reuse, improving ecosystem resilience, and mitigating security risks. In this study, we investigate the Maven Central ecosystem, one of the largest repositories of Java libraries, by applying network science techniques to its dependency graph. Leveraging the Goblin framework, we extracted a sample consisting of the top 5,000 most connected libraries. This sampling strategy resulted in a curated graph comprising approximately 1.3 million nodes and 20.9 million edges.
 
@@ -140,7 +138,7 @@ jupyter notebook src/demo.ipynb
 
 --- -->
 
-## 🛡 License
+## License
 
 This project is licensed under the **MIT License**.
 
