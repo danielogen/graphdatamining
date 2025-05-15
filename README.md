@@ -53,6 +53,7 @@ graphdatamining-main/
 
 * Python 3.8+
 * Neo4j (optional, for Cypher querying)
+* Operating System: MacOS, Linux, Windows
 
 ### Installation
 
@@ -60,6 +61,10 @@ graphdatamining-main/
 # Clone the repository
 git clone https://github.com/danielogen/graphdatamining.git
 cd graphdatamining
+
+# Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
 # Install required packages
 pip install -r requirements.txt
