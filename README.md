@@ -2,16 +2,7 @@
 ## Abstract (Short)
 Understanding the structural characteristics and connectivity patterns of large-scale software ecosystems is critical for enhancing software reuse, improving ecosystem resilience, and mitigating security risks. In this study, we investigate the Maven Central ecosystem, one of the largest repositories of Java libraries, by applying network science techniques to its dependency graph. Leveraging the Goblin framework, we extracted a sample consisting of the top 5,000 most connected libraries. This sampling strategy resulted in a curated graph comprising approximately 1.3 million nodes and 20.9 million edges.
 
-<!-- 
-### 📄 Draft Comprehensive `README.md` for `graphdatamining`
-
 ---
-
-# Graph Data Mining
-
-A Python-based project for **mining, analyzing, and visualizing large-scale artifact-release dependency graphs** in software ecosystems. This project provides tooling to build the graph from data, compute various network metrics, visualize key aspects, and perform statistical analysis such as **power-law fitting**.
-
---- -->
 
 ## Project Structure
 
@@ -73,22 +64,22 @@ cd graphdatamining
 # Install required packages
 pip install -r requirements.txt
 ```
+--- 
+### About the dataset
+The dataset used for this project is available at: [https://zenodo.org/records/13734581](https://zenodo.org/records/13734581). Due to its large size, we were unable to upload the entire dataset. However, to support the testing of certain scripts, we have provided **sample datasets** specifically for computing **in-degree** and **out-degree** for libraries and releases, respectively. You can find these sample datasets in the following directory: `src/data/csv`
 
-### Running Main Analysis
+---
+
+### Running the code
+#### Interactive Notebook - Reproducing the results
+This is the easiest approach to reproduce the results presented in the paper. In the ``src`` directory, simply run the demo.ipynb file.
+
 
 ```bash
 python src/main.py
 ```
 
 This script orchestrates the entire pipeline: data loading, graph construction, metric computation, and visualization.
-
-### Interactive Notebook
-
-Explore the **demo notebook** for interactive graph exploration:
-
-```bash
-jupyter notebook src/demo.ipynb
-```
 
 ---
 
