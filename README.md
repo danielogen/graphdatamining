@@ -72,8 +72,13 @@ The dataset used for this project is available at: [https://zenodo.org/records/1
 
 ### Running the code
 #### Interactive Notebook - Reproducing the results
-This is the easiest approach to reproduce the results presented in the paper. In the ``src`` directory, simply run the demo.ipynb file.
+This is the easiest and recommended approach to reproduce the results presented in the paper. In the ``src`` directory, simply run the demo.ipynb file.
 
+```bash
+jupyter notebook src/demo.ipynb
+```
+
+### Running Main Analysis
 
 ```bash
 python src/main.py
